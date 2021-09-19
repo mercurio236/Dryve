@@ -1,35 +1,23 @@
 import React from 'react';
-import { Container, Grid, Typography, Paper, Box } from '@mui/material';
-import { makeStyles } from '@material-ui/core/styles'
+import { Grid, Typography, Paper, Box } from '@mui/material';
 
-const useMakeStyle = makeStyles((theme) => ({
-    root: {
-        marginLeft:'4%',
-    },
-    resumo: {
-        fontWeight: 'bold',
-        marginBottom: 10
-    },
-    paperData:{
-        height: 150,
-        padding: 15
-    }
-}))
+import useMakeStyle from './styles';
 
 export default function Home() {
     const classes = useMakeStyle()
     let array = [
-        { id: '0', name: 'teste0' },
-        { id: '1', name: 'teste1' },
-        { id: '2', name: 'teste2' },
-        { id: '3', name: 'teste3' },
+        { id: '0', title: 'Title', body: 'corpo', logo: '#' },
+        { id: '1', title: 'Title', body: 'corpo', logo: '#' },
+        { id: '2', title: 'Title', body: 'corpo', logo: '#' },
+        { id: '3', title: 'Title', body: 'corpo', logo: '#' },
 
     ]
 
-    let arrayGrafic = [
-        { id: '0', name: 'teste0' },
-        { id: '1', name: 'teste1' },
+    let arrayV = [
+        { id: '0', title: 'Title', body: 'corpo', logo: '#' },
+        { id: '1', title: 'Title', body: 'corpo', logo: '#' },
     ]
+
 
     return (
         <Box sx={{ display: 'flex' }}>
@@ -38,29 +26,36 @@ export default function Home() {
                     <Typography variant="h5" className={classes.resumo}>Resumo</Typography>
                 </Grid>
                 {
-         
+
                     array.map((t) => (
                         <Grid key={t.id} item xs={3}>
-                            <Paper className={classes.paperData}>{t.name}</Paper>
+                            <Paper>
+                                <div className={classes.title}>
+                                    {t.title}
+                                    <div className={classes.bodyPaper}>
+                                        <Typography>{t.body}</Typography>
+                                        <Typography>{t.logo}</Typography>
+                                    </div>
+                                </div>
+                            </Paper>
                         </Grid>
                     ))
                 }
-            
-                        <Grid  item xs={6}>
-                            <Paper>Teste</Paper>
-                            <Paper>Teste</Paper>
-                        </Grid>
-                   
-
-{
-                    arrayGrafic.map((t) => (
-                        <Grid key={t.id} item xs={6}>
-                            <Paper>{t.name}</Paper>
+                <Grid item xs={12} className={classes.bodyGrafic}>
+                    <Paper className={classes.grafic}>Teste1</Paper>
+                    <Grid item xs={4}>
+                        <Paper className={classes.leads}>Teste2</Paper>
+                    </Grid>
+                </Grid>
+                {
+                    arrayV.map((veiculos) => (
+                        <Grid key={veiculos.id} item xs={6}>
+                            <Paper className={classes.testDrive}>{veiculos.title}</Paper>
                         </Grid>
                     ))
                 }
             </Grid>
-           
+
         </Box>
     )
 }
