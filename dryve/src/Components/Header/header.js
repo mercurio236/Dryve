@@ -140,8 +140,8 @@ export default function Header() {
                         </Link>
                     </Typography>
                     <Stack direction="row" spacing={2} >
-                        <Badge badgeContent={4} color="primary">
-                            <Notifications color="action" />
+                        <Badge badgeContent={4} color="primary" variant="dot">
+                            <Notifications color="action"/>
                         </Badge>
                         <Settings style={{ color: '#000' }} />
                         <Avatar style={{ width: 24, height: 24 }} />
@@ -159,12 +159,12 @@ export default function Header() {
                 <List>
                     {menu.map((text, index) => (
                         <ListItem button key={text.id}>
-                            <Link to={text.navegar}>
+                            <Link to={text.navegar} style={{display:'flex', textDecoration:'none', color:'#000'}}>
                                 <ListItemIcon>
                                     {text.icon}
                                 </ListItemIcon>
-                            </Link>
                             <ListItemText primary={text.title} />
+                            </Link>
                         </ListItem>
                     ))}
                 </List>
