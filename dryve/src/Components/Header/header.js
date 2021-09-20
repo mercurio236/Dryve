@@ -135,8 +135,8 @@ export default function Header() {
                         <MenuIcon color="action" />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div" style={{ flexGrow: 1 }}>
-                        <Link to="/">
-                            <img src={Logo} width="100" height="40" />
+                        <Link to="/" >
+                            <img src={Logo} width="100" height="40" style={{ marginTop: 14 }} />
                         </Link>
                     </Typography>
                     <Stack direction="row" spacing={2} >
@@ -169,7 +169,9 @@ export default function Header() {
                     ))}
                 </List>
             </Drawer>
+
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+
             </Box>
         </Box >
     )

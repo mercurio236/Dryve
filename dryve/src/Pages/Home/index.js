@@ -26,7 +26,6 @@ export default function Home() {
                     <Typography variant="h5" className={classes.resumo}>Resumo</Typography>
                 </Grid>
                 {
-
                     array.map((t) => (
                         <Grid key={t.id} item xs={3}>
                             <Paper>
