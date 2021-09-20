@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import { styled, useTheme } from '@mui/material/styles';
 import MuiDrawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
@@ -14,11 +15,13 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { Stack, Avatar, Badge, Box } from '@mui/material'
 import Settings from '@mui/icons-material/Settings';
 import Logo from '../../Assets/logo.svg';
+import { Apps, Sell, CalendarToday, DriveEta, AccountCircle, AccountBalance, Notifications } from '@mui/icons-material';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRocket, faChartLine } from '@fortawesome/free-solid-svg-icons'
 
 
 const drawerWidth = 240;
@@ -88,6 +91,17 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     }),
 );
 
+let menu = [
+    { id: '0', title: 'Resumo', icon: <Apps />, navegar: "/" },
+    { id: '1', title: 'Oportunidades', icon: <Sell /> },
+    { id: '2', title: 'Agenda', icon: <CalendarToday /> },
+    { id: '3', title: 'Veiculos', icon: <DriveEta /> },
+    { id: '4', title: 'Publicações', icon: <FontAwesomeIcon icon={faRocket} /> },
+    { id: '5', title: 'Contatos', icon: <AccountCircle />, navegar: "/contato" },
+    { id: '6', title: 'Analytics', icon: <FontAwesomeIcon icon={faChartLine} /> },
+    { id: '7', title: 'Financiamento', icon: <AccountBalance /> },
+]
+
 export default function Header() {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
@@ -99,6 +113,8 @@ export default function Header() {
     const handleDrawerClose = () => {
         setOpen(false);
     };
+
+
 
     return (
         <Box sx={{ display: 'flex' }}>
@@ -116,22 +132,24 @@ export default function Header() {
                         }}
 
                     >
-                        <MenuIcon color="action"/>
+                        <MenuIcon color="action" />
                     </IconButton>
-                        <Typography variant="h6" noWrap component="div"  style={{ flexGrow:1 }}>
+                    <Typography variant="h6" noWrap component="div" style={{ flexGrow: 1 }}>
+                        <Link to="/">
                             <img src={Logo} width="100" height="40" />
-                        </Typography>
+                        </Link>
+                    </Typography>
                     <Stack direction="row" spacing={2} >
-                        <Badge badgeContent={4} color="secondary">
-                            <MailIcon color="action"/>
+                        <Badge badgeContent={4} color="primary">
+                            <Notifications color="action" />
                         </Badge>
                         <Settings style={{ color: '#000' }} />
-                        <Avatar style={{ width:24, height:24}}  />
+                        <Avatar style={{ width: 24, height: 24 }} />
                     </Stack>
 
                 </Toolbar>
             </AppBar>
-            <Drawer variant="permanent" open={open} style={{flexGrow: 1}}>
+            <Drawer variant="permanent" open={open} style={{ flexGrow: 1 }}>
                 <DrawerHeader>
                     <IconButton onClick={handleDrawerClose}>
                         {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
@@ -139,31 +157,20 @@ export default function Header() {
                 </DrawerHeader>
                 <Divider />
                 <List>
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    ))}
-                </List>
-                <Divider />
-                <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
+                    {menu.map((text, index) => (
+                        <ListItem button key={text.id}>
+                            <Link to={text.navegar}>
+                                <ListItemIcon>
+                                    {text.icon}
+                                </ListItemIcon>
+                            </Link>
+                            <ListItemText primary={text.title} />
                         </ListItem>
                     ))}
                 </List>
             </Drawer>
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-                
             </Box>
-
-        </Box>
+        </Box >
     )
 }
