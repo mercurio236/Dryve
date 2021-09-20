@@ -122,8 +122,7 @@ export default function Home() {
                         <Divider sx={{ marginTop: 1 }} />
                         <Chart
 
-                            width={850}
-                            height={200}
+                            style={{width:'100%', height:'90%'}}
                             chartType="LineChart"
                             loader={<div>Loading Chart</div>}
                             data={[

@@ -158,9 +158,9 @@ export default function Header() {
                 <Divider />
                 <List>
                     {menu.map((text, index) => (
-                        <ListItem button key={text.id}>
+                        <ListItem button key={text.id} onClick={handleDrawerClose}>
                             <Link to={text.navegar} style={{display:'flex', textDecoration:'none', color:'#000'}}>
-                                <ListItemIcon>
+                                <ListItemIcon >
                                     {text.icon}
                                 </ListItemIcon>
                             <ListItemText primary={text.title} />

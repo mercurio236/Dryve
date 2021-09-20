@@ -15,7 +15,7 @@ const useMakeStyle = makeStyles((theme) => ({
     bodyPaper:{
         display:'flex',
         justifyContent:'space-between',
-        marginTop:'22%'
+        marginTop: 50
     },
     bodyGrafic:{
         flexDirection:'row',
@@ -33,7 +33,7 @@ const useMakeStyle = makeStyles((theme) => ({
         overflow:'auto'
     },
     testDrive:{
-        height: 250,
+        height: 400,
         padding: 10,
         overflow:'auto'
     }, 
