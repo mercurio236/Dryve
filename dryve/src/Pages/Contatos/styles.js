@@ -18,7 +18,8 @@ const useMakeStyle = makeStyles((theme) => ({
 
     },
     input: {
-        width: 350,
+        width: 100,
+        flexGrow:1
 
     },
     btnArea: {
