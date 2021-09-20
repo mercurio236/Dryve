@@ -15,7 +15,7 @@ const useMakeStyle = makeStyles((theme) => ({
     bodyPaper:{
         display:'flex',
         justifyContent:'space-between',
-        marginTop:'30%'
+        marginTop:'22%'
     },
     bodyGrafic:{
         flexDirection:'row',
@@ -24,13 +24,46 @@ const useMakeStyle = makeStyles((theme) => ({
     grafic:{
         width: '104%',
         marginRight: 15,
-        height: 250
+        height: 250,
+        padding: 10
     },
     leads:{
-        height: 250
+        height: 250,
+        padding: 10,
+        overflow:'auto'
     },
     testDrive:{
-        height: 250
+        height: 250,
+        padding: 10,
+        overflow:'auto'
+    }, 
+    avatar:{
+        background:'#EAF9FF',
+        color: '#0065FF'
+    }, 
+    leadsEnterprise:{
+        display:'flex', 
+        alignItems:'center', 
+        marginTop:10,
+    },
+    titleLeads:{
+        position:'sticky', 
+        top:-10, 
+        background:'#FFF', 
+        zIndex:1
+    },
+    titleTestDrive:{
+        position:'sticky', 
+        top:-10, 
+        background:'#FFF', 
+        zIndex:1
+    },
+    cardsTestDrive:{
+        marginTop: 20, 
+        display: 'flex', 
+        marginBottom: 10, 
+        justifyContent: 'center', 
+        alignItems: 'center'
     }
 }))
 
