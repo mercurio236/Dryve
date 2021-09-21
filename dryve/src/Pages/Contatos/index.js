@@ -1,24 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import {
-    Box, Grid, TextField, Typography, Button, Table, TableBody,
-    TableCell, TableContainer, TableHead,
-    TableRow, Paper, Stack, Pagination, Avatar
+    Box, 
+    Grid, 
+    TextField, 
+    Typography, 
+    Button, 
+    Table, 
+    TableBody,
+    TableCell, 
+    TableContainer, 
+    TableHead,
+    TableRow, 
+    Paper, 
+    Stack, 
+    Pagination, 
+    Avatar
 } from '@mui/material';
+import { columns } from '../../Components/Data/data'
 import useMakeStyle from './styles';
 
 
 
-const columns = [
-    { id: 1, name: 'Pedro ', sobrenome: 'Gandra', email: 'pedrogandra@gmail.com', telefone: '(61) 99610-4666' },
-    { id: 2, name: 'Renato Silva ', sobrenome: 'Medeiros', email: 're.medeiros@uol.com.br', telefone: '(16) 99873-2219' },
-    { id: 3, name: 'Eduardo Rocha ', sobrenome: 'Oliveira', email: 'eduardorocha@hotmail.com', telefone: '(16) 99627-0092' },
-    { id: 4, name: 'Paulo ', sobrenome: 'Mendes', email: 'paulo@mendesconsultoria.com.br', telefone: '(16) 99887-0126' },
-    { id: 5, name: 'Tatiane ', sobrenome: 'Alves', email: 'tati.alves@globo.com', telefone: '(16) 99876-4251' },
-    { id: 6, name: 'Mario Augusto dos ', sobrenome: 'Santos', email: 'marioaugusto.santos@gmail.com', telefone: '(16) 99654-0045' },
-    { id: 7, name: 'Alice Rocha ', sobrenome: 'Silva', email: 'alicerocha@outlook.com', telefone: '(16) 99678-6711' },
-    { id: 8, name: 'Thiago ', sobrenome: 'Costa', email: 'thicosta@uol.com.br', telefone: '(16) 99726-9811' },
-    { id: 9, name: 'Thiago ', sobrenome: 'Costa', email: 'thicosta@uol.com.br', telefone: '(16) 99726-9811' },
-];
+
 export default function Contato() {
     const classes = useMakeStyle()
     const [search, setSearch] = useState('');
