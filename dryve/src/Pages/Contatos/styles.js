@@ -18,7 +18,6 @@ const useMakeStyle = makeStyles((theme) => ({
 
     },
     input: {
-        width: 100,
         flexGrow:1
 
     },

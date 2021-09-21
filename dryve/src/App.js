@@ -9,8 +9,10 @@ import store from './Store';
 function App() {
   return (
     <BrowserRouter>
+      <Provider store={store}>
         <Header />
         <Router />
+      </Provider>
     </BrowserRouter>
   )
 
