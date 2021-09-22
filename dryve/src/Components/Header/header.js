@@ -93,13 +93,13 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 let menu = [
     { id: '0', title: 'Resumo', icon: <Apps />, navegar: "/" },
-    { id: '1', title: 'Oportunidades', icon: <Sell /> },
-    { id: '2', title: 'Agenda', icon: <CalendarToday /> },
-    { id: '3', title: 'Veiculos', icon: <DriveEta /> },
-    { id: '4', title: 'Publicações', icon: <FontAwesomeIcon icon={faRocket} /> },
+    { id: '1', title: 'Oportunidades', icon: <Sell />, navegar: "#" },
+    { id: '2', title: 'Agenda', icon: <CalendarToday />, navegar: "#" },
+    { id: '3', title: 'Veiculos', icon: <DriveEta />, navegar: "#" },
+    { id: '4', title: 'Publicações', icon: <FontAwesomeIcon icon={faRocket} />, navegar: "#" },
     { id: '5', title: 'Contatos', icon: <AccountCircle />, navegar: "/contato" },
-    { id: '6', title: 'Analytics', icon: <FontAwesomeIcon icon={faChartLine} /> },
-    { id: '7', title: 'Financiamento', icon: <AccountBalance /> },
+    { id: '6', title: 'Analytics', icon: <FontAwesomeIcon icon={faChartLine} />, navegar: "#" },
+    { id: '7', title: 'Financiamento', icon: <AccountBalance />, navegar: "#" },
 ]
 
 export default function Header() {
